@@ -1,13 +1,31 @@
+'use client'
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import React from 'react';
 
 const NavBar = () => {
+  const pathName = usePathname()
+  console.log('NavBar Rendered')
+console.log('pathName Here', pathName)
   const links = <>
-     <li><Link href='/about'>About</Link></li>
-     <li><Link href='/contact'>contact</Link></li>
-     <li><Link href='/blogs'>Blogs</Link></li>
-     <li><Link href='/dashboard'>DashBoard</Link></li>
-     <li><Link href='/users'>Users</Link></li>
+      <li><Link className={
+      pathName === '/' 
+      ? 'text-blue-500' : ''} href='/'>Home</Link></li>
+     <li><Link className={
+      pathName === '/about' 
+      ? 'text-blue-500' : ''} href='/about'>About</Link></li>
+     <li><Link className={
+      pathName === '/contact' 
+      ? 'text-blue-500' : ''} href='/contact'>contact</Link></li>
+     <li><Link className={
+      pathName === '/blogs' 
+      ? 'text-blue-500' : ''} href='/blogs'>Blogs</Link></li>
+     <li><Link className={
+      pathName === '/dashboard' 
+      ? 'text-blue-500' : ''}  href='/dashboard'>DashBoard</Link></li>
+     <li><Link className={
+      pathName === '/users' 
+      ? 'text-blue-500' : ''} href='/users'>Users</Link></li>
 
 
   </>
