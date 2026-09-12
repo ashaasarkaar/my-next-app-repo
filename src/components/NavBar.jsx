@@ -7,6 +7,7 @@ const NavBar = () => {
   const pathName = usePathname()
   console.log('NavBar Rendered')
 console.log('pathName Here', pathName)
+
   const links = <>
       <li><Link className={
       pathName === '/' 
